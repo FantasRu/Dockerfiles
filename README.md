@@ -1,4 +1,4 @@
 # Dockerfiles
 
 ## Install Docker
-> curl -fsSL https://get.docker.com | sh
+> apt update && apt install docker.io

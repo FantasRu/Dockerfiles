@@ -4,8 +4,10 @@
 > https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File
 
 ## How to use
-> $ wget https://raw.githubusercontent.com/FantasRu/Dockerfiles/master/ssserver/Dockerfile
-
+### Beforehand
+```bash
+$ wget https://raw.githubusercontent.com/FantasRu/Dockerfiles/master/ssserver/Dockerfile
+```
 ### Build
 ```bash
 $ docker build -t ss --build-arg arg=https://cdn.yourdomain.com/ssconfig.json .

@@ -3,15 +3,25 @@
 ## Docker
 ### Install using the repository
 ```bash
-$ sudo apt update && sudo apt upgrade 
-$ sudo apt install docker.io
+$ sudo apt update && sudo apt upgrade -y && sudo apt install docker.io -y
 ```
 ### Manage Docker as a non-root user 
-```bash
-$ sudo groupadd docker
-$ sudo gpasswd -a $USER docker
-$ newgrp docker
-```
+
+* Add the docker group if it doesn't already exist:
+	```bash
+	$ sudo groupadd docker
+	```
+
+* Add the connected user "$USER" to the docker group. Change the user name to match your preferred user if you do not want to use your current user:
+	```bash
+	$ sudo gpasswd -a $USER docker
+	```
+
+* Either do a newgrp docker or log out/in to activate the changes to groups.
+	```bash
+	$ newgrp docker
+	```
+
 
 ## Docker Engine Utility for NVIDIA GPUs
 ## Prerequisites
@@ -19,9 +29,9 @@ $ newgrp docker
 
 ####  install dependences
 ```bash
- $ sudo apt-get update && apt-get upgrade 
- $ sudo apt install gcc
- $ sudo apt install build-essential
+ $ sudo apt update && apt upgrade -y
+ $ sudo apt install gcc -y
+ $ sudo apt install build-essential -y
 ```
 #### CUDA Install 
 * [Download CUDA](https://developer.nvidia.com/cuda-downloads): `runfile (local)`
@@ -63,7 +73,7 @@ sudo add-apt-repository \
       $(lsb_release -cs) \
       stable"
 
-sudo apt install docker-ce
+sudo apt install docker-ce -y
 ```
 
 ## NVIDIA-docker(version 2.0)
@@ -77,7 +87,7 @@ curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/amd64/nvidia-docke
 ### Install
 ```bash
 sudo apt update
-sudo apt install nvidia-docker2
+sudo apt install nvidia-docker2 -y
 sudo pkill -SIGHUP dockerd
 ```
 

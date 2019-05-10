@@ -23,5 +23,5 @@ $ docker build -t ss .
 ### Run
 
 ```bash
-$ docker run -d -p 10000-10020:10000-10020 ss && echo -n "Your IP is " && hostname -I | cut -d " " -f1
-```
+$ docker run -d --name ss -v /root/ss/ssconfig.config:/etc/ssconfig.config -p 10000-10040:10000-10040 ss && echo -n 
+"Your IP is " && hostname -I | cut -d " " -f1```

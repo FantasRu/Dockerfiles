@@ -16,6 +16,6 @@ RUN \
 		echo Argument is $arg && \
 		curl $arg > /etc/ssconfig.json ; \
 	fi
-RUN pip3 install shadowsocks==2.8.2
+RUN pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip
 EXPOSE 10000-10020
 CMD ["python3", "/usr/local/bin/ssserver", "-c", "/etc/ssconfig.json", "start"]
